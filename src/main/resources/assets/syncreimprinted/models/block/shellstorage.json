@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "syncreimprinted:block/shellstorage",
+    "all": "syncreimprinted:block/shellstorage"
+  }
+}
