@@ -1,3 +1,4 @@
 {
-  "block.syncreimprinted.shellstorage": "Shell Storage"
+  "block.syncreimprinted.shellstorage": "Shell Storage",
+  "itemGroup.syncitems": "Sync Items"
 }
