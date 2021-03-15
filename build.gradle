@@ -13,6 +13,15 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+repositories {
+    maven { // JEI
+        url "https://dvs1.progwml6.com/files/maven"
+    }
+    maven { // Hwyla
+        url "https://maven.tehnut.info"
+    }
+}
+
 version = '1.0'
 group = 'com.serkprojects.syncreimprinted' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'sync-reimprinted'
@@ -113,6 +122,14 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_version}")
+
+    // Compile against the Hwyla API, but do not include it at runtime
+    compileOnly fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}:api")
+    // At runtime, use the full Hwyla jar
+    runtimeOnly fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
