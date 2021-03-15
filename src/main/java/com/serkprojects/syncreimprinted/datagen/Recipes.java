@@ -13,8 +13,6 @@ public class Recipes extends RecipeProvider {
 
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-        super.registerRecipes(consumer);
-
         ShapedRecipeBuilder.shapedRecipe(Registration.shellStorage)
                 .patternLine("xxx")
                 .patternLine("x x")
