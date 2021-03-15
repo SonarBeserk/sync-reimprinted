@@ -32,7 +32,7 @@ public class Registration {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(new BlockItem(Registration.shellStorage,
-                    new Item.Properties().group(syncItems))
+                    new Item.Properties().group(syncItems).maxStackSize(16))
                     .setRegistryName("shellstorage"));
         }
     }
