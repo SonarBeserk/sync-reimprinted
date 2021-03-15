@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "syncreimprinted",
+  "pattern": [
+    "xxx",
+    "x x",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "syncreimprinted:shellstorage"
+  }
+}
