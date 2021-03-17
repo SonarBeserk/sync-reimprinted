@@ -4,7 +4,7 @@
     "particle": "syncreimprinted:block/shellstorage",
     "down": "syncreimprinted:block/shellstorage",
     "up":    "syncreimprinted:block/shellstorage",
-    "north": "syncreimprinted:block/shellstorage",
+    "north": "syncreimprinted:block/shellstorage_closed",
     "south": "syncreimprinted:block/shellstorage",
     "west":  "syncreimprinted:block/shellstorage",
     "east":  "syncreimprinted:block/shellstorage"
