@@ -3,7 +3,11 @@ package com.serkprojects.syncreimprinted.datagen;
 import com.serkprojects.syncreimprinted.setup.Registration;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.*;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
+
 import java.util.function.Consumer;
 
 public class Recipes extends RecipeProvider {

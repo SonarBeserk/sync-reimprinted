@@ -3,10 +3,10 @@
   "textures": {
     "particle": "syncreimprinted:block/shellstorage",
     "down": "syncreimprinted:block/shellstorage",
-    "up":    "syncreimprinted:block/shellstorage",
+    "up": "syncreimprinted:block/shellstorage",
     "north": "syncreimprinted:block/shellstorage",
     "south": "syncreimprinted:block/shellstorage",
-    "west":  "syncreimprinted:block/shellstorage",
-    "east":  "syncreimprinted:block/shellstorage"
+    "west": "syncreimprinted:block/shellstorage",
+    "east": "syncreimprinted:block/shellstorage"
   }
 }

@@ -12,8 +12,13 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -34,21 +39,37 @@ public class ShellStorage extends Block {
     }
 
     @Override
-    public void onBlockPlacedBy(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if (!world.isRemote && placer != null) {
-            world.setBlockState(pos, state.with(FACING, getFacingFromEntity(pos, placer)).with(OPEN, false), 2);
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        if (!worldIn.isRemote && placer != null) {
+            worldIn.setBlockState(pos, state.with(FACING, getFacingFromEntity(pos, placer)).with(OPEN, false), 2);
         }
     }
 
     @Override
-    public void onBlockClicked(BlockState state, World world, BlockPos pos, PlayerEntity player) {
-        if(!world.isRemote) {
-            world.setBlockState(pos, state.with(OPEN, !state.get(OPEN)), 2);
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        if (!worldIn.isRemote) {
+            worldIn.setBlockState(pos, state.with(OPEN, !state.get(OPEN)), 2);
+            System.out.println("Test not remote");
+            return ActionResultType.CONSUME;
         }
+
+        System.out.println("Test remote");
+        return ActionResultType.CONSUME;
     }
 
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(FACING, OPEN);
+    }
+
+    @Override
+    public boolean hasTileEntity(BlockState state) {
+        return true;
+    }
+
+    @Nullable
+    @Override
+    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+        return new ShellStorageTile();
     }
 }
