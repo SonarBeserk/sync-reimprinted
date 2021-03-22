@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class ShellStorageTile extends TileEntity implements ITickableTileEntity {
     public ShellStorageTile() {
-        super(Registration.shellStorageTileType);
+        super(Registration.SHELLSTORAGE_TILE.get());
     }
 
     @Override

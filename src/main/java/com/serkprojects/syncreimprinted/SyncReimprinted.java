@@ -4,7 +4,6 @@ import com.serkprojects.syncreimprinted.proxy.ClientProxy;
 import com.serkprojects.syncreimprinted.proxy.IProxy;
 import com.serkprojects.syncreimprinted.proxy.ServerProxy;
 import com.serkprojects.syncreimprinted.setup.Registration;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
@@ -18,6 +17,6 @@ public class SyncReimprinted {
     public static IProxy proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
     public SyncReimprinted() {
-        MinecraftForge.EVENT_BUS.register(Registration.class);
+        Registration.init();
     }
 }

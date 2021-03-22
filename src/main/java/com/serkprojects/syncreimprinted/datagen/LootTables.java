@@ -10,6 +10,6 @@ public class LootTables extends BaseLootTableProvider {
 
     @Override
     protected void addTables() {
-        lootTables.put(Registration.shellStorage, createStandardTable("shellstorage", Registration.shellStorage));
+        lootTables.put(Registration.SHELLSTORAGE.get(), createStandardTable("shellstorage", Registration.SHELLSTORAGE.get()));
     }
 }

@@ -31,7 +31,6 @@ public class ShellStorage extends Block {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.METAL)
                 .hardnessAndResistance(2.0f));
-        setRegistryName("shellstorage");
     }
 
     public Direction getFacingFromEntity(BlockPos clickedBlock, LivingEntity entity) {
